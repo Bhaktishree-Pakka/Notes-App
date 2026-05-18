@@ -1,0 +1,321 @@
+/* ===== Global Styles ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+/* ===== Notes Grid ===== */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Note Card ===== */
+.notes-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.notes-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.notes-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.notes-card p {
+  font-size: 1rem;
+  margin: 4px 0;
+  color: #555;
+}
+
+.notes-card .date {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+/* ===== Actions Row (Edit + Delete side-by-side) ===== */
+.notes-card .actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.notes-card .actions button {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #0070f3, #005ccc);
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.notes-card .actions button:hover {
+  transform: scale(1.05);
+}
+
+/* ===== General Buttons ===== */
+button {
+  background-color: #0070f3;
+  color: #fff;
+}
+
+button:hover {
+  background-color: #005ccc;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* ===== Create Page / Form ===== */
+.create-page,
+.edit-page {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.create-page h1,
+.edit-page h1 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+input[type="text"],
+textarea {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: vertical;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+/* ===== Error / Loading ===== */
+p.error {
+  color: #ff4d4f;
+  font-weight: 500;
+}
+
+p.loading {
+  color: #0070f3;
+  font-style: italic;
+}
+
+/* ===== Navbar ===== */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 30px;
+  background: linear-gradient(135deg, #0070f3, #005ccc);
+  color: #fff;
+  align-items: center;
+}
+
+.logo {
+  margin: 0;
+}
+
+.links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.links a {
+  font-weight: 500;
+}
+
+.links button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.links button:hover {
+  background: #ddd;
+}
+
+/* ===== Create Button ===== */
+.create-btn {
+  padding: 12px 22px;
+  font-size: 16px;
+  background: linear-gradient(135deg, #0070f3, #005ccc);
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.create-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Auth Pages ===== */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+
+  box-sizing: border-box; /* 🔥 important */
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #0070f3;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #0070f3, #005ccc);
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.auth-form button:hover {
+  transform: scale(1.02);
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+  .notes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 12px;
+  }
+
+  .create-page,
+  .edit-page {
+    margin: 20px 12px;
+    padding: 20px;
+  }
+}
+
+/* ===== Dark Mode ===== */
+.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark body {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark .notes-card {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+.dark .notes-card h2 {
+  color: #ffffff;
+}
+
+.dark .notes-card p {
+  color: #cccccc;
+}
+
+.dark .nav {
+  background: #1f1f1f;
+}
+
+.dark input,
+.dark textarea {
+  background-color: #1e1e1e;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.dark .auth-form {
+  background: #1e1e1e;
+}
+
+.dark .auth-form input {
+  background: #2a2a2a;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.dark .create-btn {
+  color: #ffffff;
+}
+
+.dark .create-page {
+  background-color: #1e1e1e;  /* dark card */
+  color: #ffffff;             /* ensure text is visible */
+}
